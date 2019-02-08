@@ -1,6 +1,15 @@
 version: "3.7"
 
 services:
+  nats:
+    container_name: nats_service
+    build:
+      context: .
+      dockerfile: ./nats-service/Dockerfile
+    restart: always
+    ports:
+      - 4222:8080
+
   main:
     container_name: main_service
     build:
@@ -9,3 +18,7 @@ services:
     restart: always
     ports:
       - 8000:8080
+    depends_on:
+      - nats
+    environment:
+      BUS_HOST: //bus:4222
