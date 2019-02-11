@@ -9,8 +9,13 @@ resources:
   disk_size_gb: 10
 
 env_variables:
-  REDIS_HOST: 0.0.0.0
+  REDIS_HOST: 10.0.0.3
   REDIS_PORT: 6379
+  DB_HOST: 172.27.32.3
+  DB_PORT: 5432
+  DB_NAME: testdb
+  DB_USER: testuser
+  DB_PASSWORD: password
 
 network:
   name: default
