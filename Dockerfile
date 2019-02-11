@@ -19,4 +19,6 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /usr/bin
 COPY --from=build /go/bin .
 
-CMD ./service
+ENTRYPOINT ./service
+
+EXPOSE 8080

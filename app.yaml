@@ -9,4 +9,8 @@ resources:
   disk_size_gb: 10
 
 env_variables:
-  BUS_HOST: //1.nats-service.enhanced-storm-231003.appspot.com:4222
+  REDIS_HOST: 0.0.0.0
+  REDIS_PORT: 6379
+
+network:
+  name: default
